@@ -1044,14 +1044,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     line.textContent += textToType.charAt(charIndex);
                     charIndex++;
                     
-                    // Mechanical keyboard click
-                    playKeyclickSound();
-                    
                     // Fast scroll
                     terminalBody.scrollTop = terminalBody.scrollHeight;
                     
-                    // Variable typing speed
-                    setTimeout(printChar, 10 + Math.random() * 12);
+                    // Slower and more natural typing speed (30ms - 45ms per character)
+                    setTimeout(printChar, 30 + Math.random() * 15);
                 } else {
                     if (onComplete) onComplete();
                 }

@@ -4,28 +4,28 @@
 
 /* Design Tokens & Variables */
 :root {
-    --bg-color: #020804;
-    --panel-bg: rgba(3, 15, 6, 0.65);
-    --panel-border: rgba(0, 255, 102, 0.15);
-    --panel-border-focus: rgba(0, 255, 102, 0.4);
+    --bg-color: #030d07;
+    --panel-bg: rgba(6, 25, 11, 0.7);
+    --panel-border: rgba(0, 255, 102, 0.22);
+    --panel-border-focus: rgba(0, 255, 102, 0.55);
     
     --neon-green: #00ff66;
-    --neon-green-glow: rgba(0, 255, 102, 0.35);
+    --neon-green-glow: rgba(0, 255, 102, 0.45);
     --neon-green-dark: #003b12;
     
     --neon-cyan: #00e5ff;
-    --neon-cyan-glow: rgba(0, 229, 255, 0.3);
+    --neon-cyan-glow: rgba(0, 229, 255, 0.35);
     
     --neon-red: #ff3b30;
-    --neon-red-glow: rgba(255, 59, 48, 0.4);
+    --neon-red-glow: rgba(255, 59, 48, 0.45);
     
-    --text-primary: #e0fae9;
-    --text-muted: #578a67;
+    --text-primary: #ffffff;
+    --text-muted: #73b387;
     
     --font-cyber: 'Orbitron', monospace;
     --font-arabic: 'Cairo', sans-serif;
     
-    --crt-brightness: 1.05;
+    --crt-brightness: 1.1;
 }
 
 /* Base resets & layout */
@@ -76,7 +76,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,0.85) 100%);
+    background: radial-gradient(circle, rgba(0,0,0,0) 70%, rgba(0,0,0,0.7) 100%);
     pointer-events: none;
     z-index: 9999;
 }
@@ -128,7 +128,7 @@ html, body {
     width: 100%;
     height: 100%;
     z-index: 0;
-    opacity: 0.55;
+    opacity: 0.65;
     pointer-events: none;
 }
 
